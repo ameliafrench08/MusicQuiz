@@ -20,14 +20,14 @@ rnb_not = 0
 
 
 def choose_songs():
-    question_genres = []
+    question_genres = ["POP"]
     question_songs = []
     for i in range(4):
         genre_choose = random.randint(0, (len(basic_genres) - 1))
         question_genres.append(basic_genres[genre_choose])
     for a in range(len(question_genres)):
         pop_songs = []
-        if question_songs[a] == "POP":
+        if question_genres[a] == "POP":
             f = open("Pop", "r")
             for w in f:
                 pop_songs.append(w)
@@ -35,22 +35,21 @@ def choose_songs():
             f.close()
             random_pop = pop_songs[r]
             question_songs.append(random_pop)
-        elif question_songs[a] == "JAZZ":
+        elif question_genres[a] == "JAZZ":
             f = open("Jazz", "r")
-        elif question_songs[a] == "CLASSICAL":
+        elif question_genres[a] == "CLASSICAL":
             f = open("Classical", "r")
-        elif question_songs[a] == "RAP":
+        elif question_genres[a] == "RAP":
             f = open("Rap", "r")
-        elif question_songs[a] == "HIP HOP":
+        elif question_genres[a] == "HIP HOP":
             f = open("HipHop", "r")
-        elif question_songs[a] == "SKA":
+        elif question_genres[a] == "SKA":
             f = open("Ska", "r")
-        elif question_songs[a] == "ROCK":
+        elif question_genres[a] == "ROCK":
             f = open("Rock", "r")
-        elif question_songs[a] == "COUNTRY":
+        elif question_genres[a] == "COUNTRY":
             f = open("Country", "r")
-        elif question_songs[a] == "FOLK":
+        elif question_genres[a] == "FOLK":
             f = open("Folk", "r")
-        elif question_songs[a] == "RNB":
+        elif question_genres[a] == "RNB":
             f = open("RnB", "r")
-
